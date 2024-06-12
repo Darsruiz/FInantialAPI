@@ -1,6 +1,66 @@
 @FInantialAPI_HostAddress = http://localhost:5156
 
-GET {{FInantialAPI_HostAddress}}/1/movements
+
+
+GET {{FInantialAPI_HostAddress}}/accounts/1/movements
 Accept: application/json
 
-### 
+###
+
+### Activate Card
+POST {{FInantialAPI_HostAddress}}/accounts/1/cards/1/activate
+Content-Type: application/json
+Accept: application/json
+
+{
+    "oldPin": "1234",
+    "newPin": "1234"
+}
+
+###
+
+### Change Card PIN
+POST {{FInantialAPI_HostAddress}}/accounts/1/cards/1/changepin
+Content-Type: application/json
+Accept: application/json
+
+{
+    "oldPin": "1234",
+    "newPin": "1236"
+}
+###
+
+### Withdraw Money
+POST {{FInantialAPI_HostAddress}}/cards/1/withdraw
+Content-Type: application/json
+Accept: application/json
+
+{
+    "amount": 50
+}
+
+###
+
+### Deposit Money
+POST {{FInantialAPI_HostAddress}}/cards/1/deposit
+Content-Type: application/json
+Accept: application/json
+
+{
+    "amount": 100
+}
+
+###
+
+### Transfer Money
+POST {{FInantialAPI_HostAddress}}/accounts/transfer
+Content-Type: application/json
+Accept: application/json
+
+{
+    "sourceIban": "DE89370400440532013000",
+    "targetIban": "DE89370400440532013001",
+    "amount": 200
+}
+
+
