@@ -1,6 +1,6 @@
 @FInantialAPI_HostAddress = http://localhost:5156
 
-GET {{FInantialAPI_HostAddress}}/weatherforecast/
+GET {{FInantialAPI_HostAddress}}/1/movements
 Accept: application/json
 
-###
+### 
