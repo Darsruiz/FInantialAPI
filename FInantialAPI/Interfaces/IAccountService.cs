@@ -8,7 +8,7 @@ namespace FInantialAPI.Interfaces
         List<TransactionModel> GetMovements(int accountId);
         bool Withdraw(int cardId, WithdrawalRequestModel request);
         bool Deposit(int cardId, DepositRequestModel request);
-        bool Transfer(int accountId, TransferRequestModel request);
+        bool Transfer(TransferRequestModel request);
         bool ActivateCard(int accountId, int cardId, PinChangeRequestModel request);
         bool ChangeCardPIN(int accountId, int cardId, PinChangeRequestModel request);
 

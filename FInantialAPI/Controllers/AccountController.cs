@@ -59,19 +59,20 @@ namespace FInantialAPI.Controllers
             return BadRequest("Deposit failed.");
         }
 
-        [HttpPost("accounts/{accountId}/transfer")]
-        public IActionResult Transfer(int accountId, [FromBody] TransferRequestModel request)
+        [HttpPost("accounts/transfer")]
+        public IActionResult Transfer([FromBody] TransferRequestModel request)
         {
-            _logger.LogInformation($"Attempting to transfer {request.Amount} from account {accountId} to {request.TargetIban}");
-            var result = _accountService.Transfer(accountId, request);
+            _logger.LogInformation($"Attempting to transfer {request.Amount} from {request.SourceIban} to {request.TargetIban}");
+            var result = _accountService.Transfer(request);
             if (result)
             {
-                _logger.LogInformation($"Transfer successful from account {accountId}");
+                _logger.LogInformation($"Transfer from {request.SourceIban} to {request.TargetIban} successful");
                 return Ok("Transfer successful.");
             }
-            _logger.LogWarning($"Transfer failed from account {accountId}");
+            _logger.LogWarning($"Transfer from {request.SourceIban} to {request.TargetIban} failed");
             return BadRequest("Transfer failed.");
         }
+
 
         [HttpPost("accounts/{accountId}/cards/{cardId}/activate")]
         public IActionResult ActivateCard(int accountId, int cardId, [FromBody] PinChangeRequestModel request)

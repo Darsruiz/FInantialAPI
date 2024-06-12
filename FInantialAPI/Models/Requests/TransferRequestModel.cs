@@ -2,7 +2,8 @@
 {
     public class TransferRequestModel
     {
-        public int TargetAccountId { get; set; }
+        public string SourceIban { get; set; }
+        public string TargetIban { get; set; }
         public decimal Amount { get; set; }
     }
 }
