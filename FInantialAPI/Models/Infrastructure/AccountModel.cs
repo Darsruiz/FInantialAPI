@@ -2,10 +2,10 @@
 {
     public class AccountModel
     {
-        int Id { get; set; }
+        public int Id { get; set; }
         public string Iban { get; set; }
-        decimal Balance { get; set; }
-        decimal CreditBalance { get; set; }
-        int IdBankEntity { get; set; }
+        public decimal Balance { get; set; }
+        public decimal CreditBalance { get; set; }
+        public int IdBankEntity { get; set; }
     }
 }
