@@ -1,6 +1,6 @@
-﻿namespace FInantialAPI.Models
+﻿namespace FInantialAPI.Models.Infrastructure
 {
-    public class Transaction
+    public class TransactionModel
     {
         public int Id { get; set; }
         public DateTime Date { get; set; }
